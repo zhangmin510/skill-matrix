@@ -1,0 +1,10 @@
+{
+  "name": "cubox-classify",
+  "description": "Auto-classify Cubox bookmarks into folders and tags by analyzing article content",
+  "version": "1.0.0",
+  "author": {
+    "name": "ZhangMin.name"
+  },
+  "license": "MIT",
+  "skills": "."
+}

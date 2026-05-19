@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skill-matrix",
+  "description": "Personal skill library for AI coding assistants",
+  "owner": {
+    "name": "ZhangMin.name"
+  },
+  "plugins": [
+    {
+      "name": "cubox-classify",
+      "description": "Auto-classify Cubox bookmarks into folders and tags by analyzing article content",
+      "source": "./skills/cubox-classify",
+      "category": "productivity"
+    }
+  ]
+}

@@ -6,12 +6,16 @@ A personal skill library for AI coding assistants (Claude Code, Codex, Cursor, A
 
 ```
 skill-matrix/
+├── .claude-plugin/
+│   └── marketplace.json      # Marketplace registration (Claude Code)
 ├── skills/
 │   └── <skill-name>/
-│       └── SKILL.md      # Skill definition (frontmatter + instructions)
-├── AGENTS.md             # This file — project context for AI agents
-├── CLAUDE.md             # Symlink → AGENTS.md
-└── README.md             # Human-readable overview
+│       ├── SKILL.md            # Skill definition (frontmatter + instructions)
+│       └── .claude-plugin/
+│           └── plugin.json     # Plugin metadata (Claude Code)
+├── AGENTS.md                 # This file — project context for AI agents
+├── CLAUDE.md                 # Symlink → AGENTS.md
+└── README.md                 # Human-readable overview
 ```
 
 ## How to add a new skill
@@ -29,7 +33,17 @@ description: "When to trigger this skill and what it does."
 
 3. Write the skill body — workflow steps, edge cases, commands, examples.
 
-## Install a skill locally
+## Install as a plugin (Claude Code marketplace)
+
+This repo is registered as a Claude Code plugin marketplace. Plugins can be
+installed directly — Claude Code handles cloning, caching, and activation.
+
+```bash
+# From Claude Code, install a plugin from this repo:
+/install-plugin cubox-classify --from git@github.com:zhangmin510/skill-matrix.git
+```
+
+Or symlink skills for development (changes reflect immediately):
 
 ```bash
 # Install all skills
