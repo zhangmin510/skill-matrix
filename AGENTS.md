@@ -35,21 +35,22 @@ description: "When to trigger this skill and what it does."
 
 ## Install as a plugin (Claude Code marketplace)
 
-This repo is registered as a Claude Code plugin marketplace. Plugins can be
-installed directly — Claude Code handles cloning, caching, and activation.
+This repo is registered as a Claude Code plugin marketplace.
 
-```bash
-# From Claude Code, install a plugin from this repo:
-/install-plugin cubox-classify --from git@github.com:zhangmin510/skill-matrix.git
+```
+# 1. Register this repo as a marketplace (once)
+/plugin marketplace add zhangmin510/skill-matrix
+
+# 2. Install plugins from the marketplace
+/plugin install cubox-classify
 ```
 
-Or symlink skills for development (changes reflect immediately):
+Claude Code handles cloning, caching, and activation automatically. New plugins added to this repo will appear in the marketplace listing.
+
+For development (changes reflect immediately without reinstall):
 
 ```bash
-# Install all skills
-ln -sf "$(pwd)/skills/"* ~/.claude/skills/
-
-# Install a single skill
+# Single skill
 ln -sf "$(pwd)/skills/cubox-classify" ~/.claude/skills/
 ```
 

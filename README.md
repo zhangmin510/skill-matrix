@@ -4,20 +4,21 @@ Personal AI assistant skill library — SKILL.md files for Claude Code, Codex, C
 
 ## Install as a Claude Code plugin (recommended)
 
-```bash
-# From Claude Code, install a plugin from this repo:
-/install-plugin cubox-classify --from git@github.com:zhangmin510/skill-matrix.git
+```
+# 1. Register this repo as a marketplace (once)
+/plugin marketplace add zhangmin510/skill-matrix
+
+# 2. Install plugins from the marketplace
+/plugin install cubox-classify
 ```
 
-Claude Code handles cloning, caching, and activation automatically. The plugin is registered in `.claude-plugin/marketplace.json`.
+Claude Code handles cloning, caching, and activation automatically. All plugins are registered in `.claude-plugin/marketplace.json`.
 
 ## Install via symlink (development / other tools)
 
-```bash
-# All skills → your AI assistant
-ln -sf "$(pwd)/skills/"* ~/.claude/skills/
+For development (changes reflect immediately without reinstall):
 
-# Single skill
+```bash
 ln -sf "$(pwd)/skills/cubox-classify" ~/.claude/skills/
 ```
 
